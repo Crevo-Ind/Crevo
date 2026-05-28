@@ -1,3 +1,5 @@
+  
+
 import { useState } from "react";
 
 const FOUNDING_LIMIT = 100;
@@ -536,7 +538,7 @@ function HomePage({ setPage, creators, foundingCreatorsLeft, foundingClientsLeft
             <div style={{ minWidth:220, flex:1, maxWidth:300, display:"flex", flexDirection:"column", gap:14 }}>
               <FoundingBar label="Creator Spots" filled={FOUNDING_LIMIT - foundingCreatorsLeft}/>
               <FoundingBar label="Client Spots" filled={FOUNDING_LIMIT - foundingClientsLeft}/>
-              <PrimaryBtn full onClick={function(){ setPage("signup-creator"); }}>Join as Founding Creator</PrimaryBtn>
+              <PrimaryBtn full onClick={function(){ window.open("https://forms.gle/B2JxZyefhCbnnubMA"); }}>Join as Founding Creator</PrimaryBtn>
               <SecondaryBtn full onClick={function(){ setPage("post-req"); }}>Post a Requirement</SecondaryBtn>
             </div>
           </div>
@@ -670,7 +672,7 @@ function FindCreatorsPage({ creators, foundingCreatorsLeft, setPage }) {
           <h2 style={{ fontSize:22, fontWeight:700, letterSpacing:"-0.5px", marginBottom:4, color:"#ffffff" }}>Find Creators</h2>
           <p style={{ color:"#52525B", fontSize:13 }}>{filtered.length} creator{filtered.length !== 1 ? "s" : ""} · {credits} credits left today</p>
         </div>
-        <PrimaryBtn onClick={function(){ setPage("signup-creator"); }}>Join as Creator</PrimaryBtn>
+        <PrimaryBtn onClick={function(){ window.open("https://forms.gle/B2JxZyefhCbnnubMA"); }}>Join as Creator</PrimaryBtn>
       </div>
 
       <input value={search} onChange={function(e){ setSearch(e.target.value); }} placeholder="Search by name, city, or skill..." style={Object.assign({}, inputStyle, { marginBottom:14 })}/>
@@ -694,7 +696,7 @@ function FindCreatorsPage({ creators, foundingCreatorsLeft, setPage }) {
           <div style={{ color:"#52525B", fontSize:13, marginBottom:22, maxWidth:340, margin:"0 auto 22px" }}>
             Be one of the first creators on Crevo and unlock lifetime founding benefits.
           </div>
-          <PrimaryBtn onClick={function(){ setPage("signup-creator"); }}>Join as Founding Creator</PrimaryBtn>
+          <PrimaryBtn onClick={function(){ window.open("https://forms.gle/B2JxZyefhCbnnubMA"); }}>Join as Founding Creator</PrimaryBtn>
         </div>
       ) : (
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(255px,1fr))", gap:14 }}>
@@ -836,7 +838,7 @@ export default function Crevo() {
       <nav style={{ background:"rgba(9,9,11,0.97)", borderBottom:"1px solid #1a1a20", padding:"10px 16px", position:"sticky", top:0, zIndex:100 }}>
         <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:8 }}>
           <div onClick={function(){ setPage("home"); }}><Logo/></div>
-          <PrimaryBtn small onClick={function(){ setPage("signup-creator"); }}>Join as Creator</PrimaryBtn>
+          <PrimaryBtn small onClick={function(){ window.open("https://forms.gle/B2JxZyefhCbnnubMA"); }}>Join as Creator</PrimaryBtn>
         </div>
         <div style={{ display:"flex", gap:2, borderTop:"1px solid #1a1a20", paddingTop:8 }}>
           {NAV.map(function(item) {
